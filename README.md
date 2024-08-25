@@ -1,66 +1,19 @@
-## Foundry
+# Merkle Airdrop
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+The project uses Merkle Proofs to verify address eligibility for an ERC20 token aidrop. 
+It allows claiming tokens and paying gas fees on behalf of the claiming adress using signature.
 
-Foundry consists of:
+### Requirements
+- [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- [foundry](https://getfoundry.sh/)
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
+### Installation
+```bash
+git clone https://github.com/KhadijaAhmadova/merkle-airdrop
+cd merkle-airdrop
 ```
-
-### Test
-
-```shell
-$ forge test
+Install [Openzeppelin library](https://github.com/OpenZeppelin/openzeppelin-contracts)
+```bash
+forge install OpenZeppelin/openzeppelin-contracts
 ```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+Add `remappings = ["@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/"]` in `foundry.toml`.
